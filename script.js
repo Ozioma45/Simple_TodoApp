@@ -4,7 +4,8 @@ function addTask() {
 
   if (taskInput.value.trim() !== "") {
     var li = document.createElement("li");
-    li.textContent = taskInput.value;
+    li.innerHTML = '<span class="taskText">' + taskInput.value + "</span>";
+    li.innerHTML += '<span class="edit" onclick="editTask(this)">✎</span>';
     li.innerHTML += '<span class="delete" onclick="deleteTask(this)">❌</span>';
     taskList.appendChild(li);
     taskInput.value = "";
@@ -15,4 +16,14 @@ function addTask() {
 
 function deleteTask(task) {
   task.parentNode.remove();
+}
+
+function editTask(task) {
+  var listItem = task.parentNode;
+  var taskText = listItem.querySelector(".taskText");
+  var newText = prompt("Edit task:", taskText.textContent);
+
+  if (newText !== null && newText.trim() !== "") {
+    taskText.textContent = newText;
+  }
 }
