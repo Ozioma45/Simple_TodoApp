@@ -7,6 +7,7 @@ function addTask() {
     li.innerHTML = '<span class="taskText">' + taskInput.value + "</span>";
     li.innerHTML += '<span class="edit" onclick="editTask(this)">✎</span>';
     li.innerHTML += '<span class="delete" onclick="deleteTask(this)">❌</span>';
+    li.innerHTML += '<input type="checkbox" onclick="toggleTaskStatus(this)">';
     taskList.appendChild(li);
     taskInput.value = "";
   } else {
@@ -26,4 +27,20 @@ function editTask(task) {
   if (newText !== null && newText.trim() !== "") {
     taskText.textContent = newText;
   }
+}
+
+function toggleTaskStatus(checkbox) {
+  var listItem = checkbox.parentNode;
+  var taskText = listItem.querySelector(".taskText");
+
+  if (checkbox.checked) {
+    listItem.classList.add("completed");
+  } else {
+    listItem.classList.remove("completed");
+  }
+
+  // Reorder completed tasks to the bottom
+  var taskList = document.getElementById("taskList");
+  var completedTasks = taskList.querySelectorAll(".completed");
+  completedTasks.forEach((task) => taskList.appendChild(task));
 }
