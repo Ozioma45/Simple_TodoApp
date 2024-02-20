@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(179, 179, 179);
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  display: flex;
+}
+
+.head1 {
+  background-color: #24b293;
+  border-radius: 15px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.37);
+}
+
+#taskInput {
+  width: 75%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  color: #f1f1f1;
+  padding: 0 2rem;
+  background-color: #4ebfa6;
+}
+
+#taskInput::placeholder {
+  color: #f1f1f1;
+}
+
+#taskInput:visited {
+  border: none;
+}
+
+.addTask {
+  font-size: 3rem;
+  margin-left: -3rem;
+  color: #f1f1f1;
+}
+
+#taskList {
+}
