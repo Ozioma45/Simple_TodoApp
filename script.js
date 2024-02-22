@@ -10,16 +10,7 @@ function addTask() {
     ctrl.classList.add("ctrl");
 
     // Set innerHTML of the li element
-    li.classList.add(
-      "bg-white",
-      "col-md-8",
-      "tasks",
-      "col-12",
-      "text-start",
-      "ps-3",
-      "d-flex",
-      "align-items-center"
-    );
+    li.classList.add("tasks");
     li.innerHTML = '<span class="taskText">' + taskInput.value + "</span>";
 
     // Move the controls to the control div
